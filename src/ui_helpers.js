@@ -9,7 +9,8 @@ function addCustomButton(cb) {
         <div class="riddle-replay-header-refresher-container">
             <div class="riddle-replay-header-refresher-button-wrapper">
                 <button class="riddle-replay-header-refresher-action-button">
-                    Update headers <span class="riddle-replay-header-refresher-dropdown-arrow">▼</span>
+                    <div> Update headers </div>
+                    <i  class="c-icon fas fa-caret-down"></i>
                 </button>
                 <div class="riddle-replay-header-refresher-dropdown">
                     <label>Headers separated by newlines</label>
@@ -32,7 +33,7 @@ function addCustomButton(cb) {
     });
 
     // Manage dropdown visibility
-    arrow.addEventListener("click", function (event) {
+    button.addEventListener("click", function (event) {
         event.stopPropagation();
         const isVisible = dropdown.style.display === "block";
         dropdown.style.display = isVisible ? "none" : "block";
