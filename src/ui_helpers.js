@@ -9,8 +9,10 @@ function addCustomButton(cb) {
         <div class="riddle-replay-header-refresher-container">
             <div class="riddle-replay-header-refresher-button-wrapper">
                 <button class="riddle-replay-header-refresher-action-button">
-                    <div> Update headers </div>
-                    <i  class="c-icon fas fa-caret-down"></i>
+                    <div style="padding: 0 .5em;">Update headers</div>
+                    <div class="riddle-replay-header-refresher-menuarrow" style="border-top-left-radius: unset; border-bottom-left-radius: unset; border-left: .15rem solid rgba(0,0,0,.1); align-items: center; justify-content: center; display: flex; height: 100%; width: 25px;">
+                      <i class="c-icon fas fa-caret-down"></i>
+                    </div>
                 </button>
                 <div class="riddle-replay-header-refresher-dropdown">
                     <label>Headers separated by newlines</label>
@@ -25,15 +27,15 @@ function addCustomButton(cb) {
 
     const button = element.querySelector(".riddle-replay-header-refresher-action-button");
     const dropdown = element.querySelector(".riddle-replay-header-refresher-dropdown");
-    const arrow = button.querySelector(".riddle-replay-header-refresher-dropdown-arrow");
     const textarea = dropdown.querySelector(".riddle-replay-header-refresher-textarea");
-
+    const arrow = button.querySelector(".riddle-replay-header-refresher-menuarrow");
+        
     textarea.addEventListener("click", function (event) {
         event.stopPropagation();
     });
 
     // Manage dropdown visibility
-    button.addEventListener("click", function (event) {
+    arrow.addEventListener("click", function (event) {
         event.stopPropagation();
         const isVisible = dropdown.style.display === "block";
         dropdown.style.display = isVisible ? "none" : "block";
